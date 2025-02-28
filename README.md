@@ -1,6 +1,6 @@
 # Police K9 Script
 
-**Police K9 Script** is a project originally forked from [hashisx's repository](https://github.com/hashisx/hashx_k9).
+**Police K9 Script** is a project originally forked from [hashisx's repository](https://github.com/hashisx/hashx_k9), and later from [FjamZoo's repository](https://github.com/FjamZoo/qb-k9)
 
 ## Installation
 
@@ -35,4 +35,4 @@ This script allows you to retrieve a police dog, and then use it to follow or at
 
 ## Bugs
 
-If you experience any issues or bugs, contact me on discord through the mythic discord (AutLaaw): [Mythic Framework](https://discord.gg/ZexaMRuWk2)
+If you experience any issues or bugs, contact me on discord through the [Mythic Framework Discord](https://discord.gg/ZexaMRuWk2) (AutLaaw).
