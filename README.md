@@ -1,1 +1,38 @@
-# mythic-k9
+# Police K9 Script
+
+**Police K9 Script** is a project originally forked from [hashisx's repository](https://github.com/hashisx/hashx_k9).
+
+## Installation
+
+1. **Download the K9 Ped Asset**  
+   The K9 Ped used in this script is a custom model. You can download the model from the [Cfx.re forum](https://forum.cfx.re/t/how-to-german-shepherd-malinois-k9-dog-1-0-1/1065040).
+
+2. **Add to Server Files**  
+   Place the `mythic-k9` folder into your server's resource directory.
+
+3. **Configure Resources**  
+   Start the script by adding the following line to your `resources.cfg` file:
+   ```plaintext
+   start mythic-k9
+   ```
+
+## Overview
+
+This script allows you to retrieve a police dog, and then use it to follow or attack targets. The dog will only attack when you are pointing a weapon. In addition, it lets you make the dog sit, stand, lay down, search players, vehicles, and areas. You can also put the dog in a vehicle.
+
+## How to Use
+
+1. **Retrieve a Dog:**  
+   Retrieve a dog from the location specified in the configuration file.
+
+2. **Keybind Setup:**
+
+   - Bind your preferred key in the configuration file, or set it in-game through your settings.
+   - Use your defined keybind to open the K9 commands menu, which lets you choose to attack a player, follow a player, make the dog sit, stand, lay down, search players, vehicles, and areas. You can also put the dog in a vehicle.
+
+3. **Attacking:**  
+   Make sure you are pointing a weapon at a player when you press the attack keybind.
+
+## Bugs
+
+If you experience any issues or bugs, contact me on discord through the mythic discord (AutLaaw): [Mythic Framework](https://discord.gg/ZexaMRuWk2)
