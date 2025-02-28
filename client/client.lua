@@ -583,8 +583,8 @@ RegisterNetEvent('mythic-k9:client:CommandsMenu', function()
     { label = "🧍 K9 Stand", description = "Make your K9 dog stand up", action = "stand" },
     { label = "🔈 K9 Sit", description = "Make your K9 dog sit down", action = "sit" },
     { label = "🔈 K9 Lay Down", description = "Make your K9 dog lay down", action = "laydown" },
-    { label = "🚗 K9 Search Car", description = "Make your K9 search a nearby car", action = "searchcar" },
-    { label = "🚘 K9 Enter / Exit Vehicle", description = "Tell your K9 to enter a vehicle", action = "enterCar" },
+    { label = "🚗 K9 Search Vehicle", description = "Make your K9 search a nearby vehicle", action = "searchVehicle" },
+    { label = "🚘 K9 Enter / Exit Vehicle", description = "Tell your K9 to enter a vehicle", action = "enterVehicle" },
     { label = "🧍 K9 Search Person", description = "Make your K9 search a nearby person", action = "searchDude" },
     { label = "🌍 K9 Search Area", description = "Make your K9 search the area", action = "searchArea" }
   }
@@ -634,9 +634,9 @@ RegisterNetEvent('mythic-k9:client:Commands', function(data)
     PlayAnimation(sit.dict, sit.anim)
   elseif action == "laydown" then
     PlayAnimation(laydown.dict, laydown.anim)
-  elseif action == "searchcar" then
+  elseif action == "searchVehicle" then
     K9SearchVehicle()
-  elseif action == "enterCar" then
+  elseif action == "enterVehicle" then
     K9ToggleVehicle(false)
   elseif action == "searchDude" then
     K9SearchPerson()
