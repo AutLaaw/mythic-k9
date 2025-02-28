@@ -4,13 +4,16 @@
 
 ## Installation
 
-1. **Download the K9 Ped Asset**  
+1. **Download ox_lib**  
+   Make sure you have ox_lib installed [ox_lib](https://github.com/overextended/ox_lib).
+
+2. **Download the K9 Ped Asset**  
    The K9 Ped used in this script is a custom model. You can download the model from the [Cfx.re forum](https://forum.cfx.re/t/how-to-german-shepherd-malinois-k9-dog-1-0-1/1065040).
 
-2. **Add to Server Files**  
+3. **Add to Server Files**  
    Place the `mythic-k9` folder into your server's resource directory.
 
-3. **Configure Resources**  
+4. **Configure Resources**  
    Start the script by adding the following line to your `resources.cfg` file:
    ```plaintext
    start mythic-k9
