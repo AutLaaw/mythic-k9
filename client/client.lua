@@ -402,13 +402,13 @@ function InitK9Ped()
             name = "pd_k9_unit",
             icon = "paw",
             label = "PD K9 Unit",
-            event = "mythic-k9:client:menu",
+            event = "al-k9:client:menu",
             job = Config.K9.job,
             distance = 3.0,
           },
         },
       })
-    elseif Config.K9.target == "mythic" then
+    elseif Config.K9.target == "mythic" or Config.K9.target == "sandbox" then
       while not Targeting do
         Wait(200)
       end
@@ -422,7 +422,7 @@ function InitK9Ped()
         {
           icon = "paw",
           text = "PD K9 Unit",
-          event = "mythic-k9:client:menu",
+          event = "al-k9:client:menu",
           jobPerms = {
             {
               job = Config.K9.job,
@@ -437,7 +437,7 @@ function InitK9Ped()
   end)
 end
 
-RegisterNetEvent('mythic-k9:client:menu', function()
+RegisterNetEvent('al-k9:client:menu', function()
   local K9Purchase = {
     main = {
       label = "🐶 | Police K9 Menu",
@@ -448,19 +448,19 @@ RegisterNetEvent('mythic-k9:client:menu', function()
   table.insert(K9Purchase.main.items, {
     label = "🐕‍🦺 | Take out K9",
     description = "Here you can take out one of the department's available dogs",
-    event = "mythic-k9:client:PurchaseDog"
+    event = "al-k9:client:PurchaseDog"
   })
 
   table.insert(K9Purchase.main.items, {
     label = "🐕 | Return K9",
     description = "Here you can return one of the department's K9 Dogs",
-    event = "mythic-k9:client:ReturnDoggo"
+    event = "al-k9:client:ReturnDoggo"
   })
 
   ListMenu:Show(K9Purchase)
 end)
 
-RegisterNetEvent('mythic-k9:client:ReturnDoggo', function()
+RegisterNetEvent('al-k9:client:ReturnDoggo', function()
   if k9_id then
     DespawnK9()
     Notification:Success("You returned the K9 Unit!", 4000)
@@ -469,7 +469,7 @@ RegisterNetEvent('mythic-k9:client:ReturnDoggo', function()
   end
 end)
 
-RegisterNetEvent('mythic-k9:client:PurchaseDog', function()
+RegisterNetEvent('al-k9:client:PurchaseDog', function()
   if k9_id then
     DespawnK9()
     Notification:Info("Returned K9 Unit.", 4000)
@@ -486,7 +486,7 @@ RegisterNetEvent('mythic-k9:client:PurchaseDog', function()
     table.insert(K9DogsMenu.main.items, {
       label = v.Header,
       description = v.Description,
-      event = "mythic-k9:client:SpawnHandler",
+      event = "al-k9:client:SpawnHandler",
       data = {
         model = v.Dog,
         colour = v.Colour,
@@ -498,7 +498,7 @@ RegisterNetEvent('mythic-k9:client:PurchaseDog', function()
   ListMenu:Show(K9DogsMenu)
 end)
 
-RegisterNetEvent('mythic-k9:client:SpawnHandler', function(data)
+RegisterNetEvent('al-k9:client:SpawnHandler', function(data)
   TriggerServerEvent("K9:server:spawnK9", data.model, data.colour, data.vest)
 end)
 
@@ -559,14 +559,14 @@ end)
 
 function RegisterKeyBinds()
   Keybinds:Add('caninecommanders', Config.K9.K9KeyCommands, 'keyboard', 'Police - K9 Commands', function()
-    TriggerEvent('mythic-k9:client:CommandsMenu')
+    TriggerEvent('al-k9:client:CommandsMenu')
   end)
   Keybinds:Add('cannineattackfollow', Config.K9.K9KeyFollowAttack, 'keyboard', 'Police - K9 Follow / Attack', function()
-    TriggerEvent('mythic-k9:client:Commands', { action = 'followAttack' })
+    TriggerEvent('al-k9:client:Commands', { action = 'followAttack' })
   end)
 end
 
-RegisterNetEvent('mythic-k9:client:CommandsMenu', function()
+RegisterNetEvent('al-k9:client:CommandsMenu', function()
   if not activate_k9 then
     Notification:Error("No active K9 available.", 4000)
     return
@@ -593,7 +593,7 @@ RegisterNetEvent('mythic-k9:client:CommandsMenu', function()
     table.insert(k9CommandsMenu.main.items, {
       label = command.label,
       description = command.description,
-      event = "mythic-k9:client:Commands",
+      event = "al-k9:client:Commands",
       data = { action = command.action }
     })
   end
@@ -601,7 +601,7 @@ RegisterNetEvent('mythic-k9:client:CommandsMenu', function()
   ListMenu:Show(k9CommandsMenu)
 end)
 
-RegisterNetEvent('mythic-k9:client:Commands', function(data)
+RegisterNetEvent('al-k9:client:Commands', function(data)
   local action = data.action
   if action == "followAttack" then
     if activate_k9 then

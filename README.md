@@ -2,6 +2,8 @@
 
 **Police K9 Script** is a project originally forked from [hashisx's repository](https://github.com/hashisx/hashx_k9), and later from [FjamZoo's repository](https://github.com/FjamZoo/qb-k9)
 
+**Thanks to [Boom's Repository](https://github.com/Boom1053/sandbox-k9)**, support has been added for the sandbox framework.
+
 ## Installation
 
 1. **Download ox_lib**  
@@ -38,4 +40,4 @@ This script allows you to retrieve a police dog, and then use it to follow or at
 
 ## Bugs
 
-If you experience any issues or bugs, contact me on discord through the [Mythic Framework Discord](https://discord.gg/ZexaMRuWk2) (AutLaaw).
+If you experience any issues or bugs, contact me on discord through the [AutLaaw's Development Discord](https://discord.gg/bs2ctkn6EB).

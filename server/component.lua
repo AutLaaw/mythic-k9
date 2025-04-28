@@ -1,20 +1,23 @@
+local Config = require 'shared/config'
+local framework = Config.K9.framework
+
 AddEventHandler("K9:Shared:DependencyUpdate", RetrieveComponents)
 function RetrieveComponents()
-	Fetch = exports["mythic-base"]:FetchComponent("Fetch")
-	Logger = exports["mythic-base"]:FetchComponent("Logger")
-	Jobs = exports["mythic-base"]:FetchComponent("Jobs")
-	Inventory = exports["mythic-base"]:FetchComponent("Inventory")
+	Fetch = exports[framework]:FetchComponent("Fetch")
+	Logger = exports[framework]:FetchComponent("Logger")
+	Jobs = exports[framework]:FetchComponent("Jobs")
+	Inventory = exports[framework]:FetchComponent("Inventory")
 end
 
 AddEventHandler("Core:Shared:Ready", function()
-	exports["mythic-base"]:RequestDependencies("K9", {
+	exports[framework]:RequestDependencies("K9", {
 		"Fetch",
 		"Logger",
 		"Jobs",
 		"Inventory",
 	}, function(error)
 		if #error > 0 then
-			exports["mythic-base"]:FetchComponent("Logger"):Critical("K9", "Failed To Load All Dependencies")
+			exports[framework]:FetchComponent("Logger"):Critical("K9", "Failed To Load All Dependencies")
 			return
 		end
 		RetrieveComponents()

@@ -1,6 +1,7 @@
 return {
     K9 = {
-        target = "ox",                                         -- Target (ox for ox_target, mythic for mythic-targeting)
+        framework = "mythic",                                  -- Framework to use (mythic or sandbox)
+        target = "ox",                                         -- Target (ox for ox_target, mythic for mythic-targeting, sandbox for sandbox-targeting)
         K9KeyCommands = "",                                    -- Keybind for K9 Commands
         K9KeyFollowAttack = "",                                -- Keybind for attacking player if aimed, or follow player if not aimed
         job = "police",                                        -- Job that can use the K9
