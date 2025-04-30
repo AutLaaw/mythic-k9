@@ -1,14 +1,15 @@
 local Config = require 'shared/config'
 local framework = Config.K9.framework
+local frameworkName = Config.K9.framework .. "-base"
 
 AddEventHandler("K9:Shared:DependencyUpdate", RetrieveComponents)
 local function RetrieveComponents()
-    Notification = exports[framework]:FetchComponent("Notification")
-    Jobs = exports[framework]:FetchComponent("Jobs")
-    ListMenu = exports[framework]:FetchComponent("ListMenu")
-    Keybinds = exports[framework]:FetchComponent("Keybinds")
+    Notification = exports[frameworkName]:FetchComponent("Notification")
+    Jobs = exports[frameworkName]:FetchComponent("Jobs")
+    ListMenu = exports[frameworkName]:FetchComponent("ListMenu")
+    Keybinds = exports[frameworkName]:FetchComponent("Keybinds")
     if Config.K9.target == "mythic" or Config.K9.target == "sandbox" then
-        Targeting = exports[framework]:FetchComponent("Targeting")
+        Targeting = exports[frameworkName]:FetchComponent("Targeting")
     end
 end
 
@@ -23,7 +24,7 @@ AddEventHandler("Core:Shared:Ready", function()
         table.insert(dependencies, "Targeting")
     end
 
-    exports[framework]:RequestDependencies("K9", dependencies, function(error)
+    exports[frameworkName]:RequestDependencies("K9", dependencies, function(error)
         if #error > 0 then
             return
         end
