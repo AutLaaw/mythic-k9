@@ -408,7 +408,7 @@ function InitK9Ped()
           },
         },
       })
-    elseif Config.K9.target == "mythic" or Config.K9.target == "sandbox" then
+    elseif Config.K9.target == "mythic" or "sandbox" then
       while not Targeting do
         Wait(200)
       end
